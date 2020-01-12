@@ -1,4 +1,4 @@
-import { testFunction } from '~/index'
+import { testFunction } from '~index'
 
 describe('test function', () => {
   let result

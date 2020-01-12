@@ -1,4 +1,4 @@
-import { fibonacci, fibRecursive, fibMemo } from '~/fibonacci'
+import { fibonacci, fibRecursive, fibMemo } from '~fibonacci'
 
 describe('fibonacci', () => {
   let result
