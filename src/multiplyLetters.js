@@ -23,3 +23,15 @@ export const divideLetters = (string, letter) => {
   const stringToReplace = repeatingLetter.join('')
   return string.replace(stringToReplace, `${letterCount}x${letter}`)
 }
+
+export const divideLettersAgain = (string, num) => {
+  const dict = {}
+  string.split('').forEach(l => {
+    dict[l] = dict[l] ? dict[l] + 1 : 1
+  })
+  const letter = Object.keys(dict).find(k => dict[k] >= num)
+  const letterCount = dict[letter]
+  const repeatingLetter = new Array(letterCount).fill(letter)
+  const stringToReplace = repeatingLetter.join('')
+  return string.replace(stringToReplace, `${letterCount}x${letter}`)
+}

@@ -40,3 +40,20 @@ describe('divideLetters', () => {
     })
   })
 })
+describe('divideLettersAgain', () => {
+  let result
+  let string
+  let num
+  beforeEach(() => {
+    result = divideLettersAgain(string, num)
+  })
+  describe('asfffyyyyy', () => {
+    beforeAll(() => {
+      string = 'asfffyyyyy'
+      num = 5
+    })
+    test('should turn the y\'s into length-x-y', () => {
+      expect(result).toEqual('asfff5xy')
+    })
+  })
+})
