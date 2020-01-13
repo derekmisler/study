@@ -13,6 +13,10 @@ export const multiplyLetters = string => {
   return newLetters.join('')
 }
 
+// find repeating consecutive characters in string
+// count consecutive characters
+// replace with count + x + character
+
 export const divideLetters = (string, letter) => {
   const dict = {}
   string.split('').forEach(l => {
@@ -29,9 +33,12 @@ export const divideLettersAgain = (string, num) => {
   string.split('').forEach(l => {
     dict[l] = dict[l] ? dict[l] + 1 : 1
   })
-  const letter = Object.keys(dict).find(k => dict[k] >= num)
-  const letterCount = dict[letter]
-  const repeatingLetter = new Array(letterCount).fill(letter)
-  const stringToReplace = repeatingLetter.join('')
-  return string.replace(stringToReplace, `${letterCount}x${letter}`)
+  const letters = Object.keys(dict).filter(k => dict[k] >= num)
+  letters.forEach(letter => {
+    const letterCount = dict[letter]
+    const stringToReplace = new Array(letterCount).fill(letter).join('')
+    string = string.replace(stringToReplace, `${letterCount}x${letter}`)
+    return string
+  })
+  return string
 }

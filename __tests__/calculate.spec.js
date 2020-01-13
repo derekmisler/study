@@ -56,4 +56,13 @@ describe('divideLettersAgain', () => {
       expect(result).toEqual('asfff5xy')
     })
   })
+  describe('asfffyyyyy', () => {
+    beforeAll(() => {
+      string = 'asfffyyyyy'
+      num = 3
+    })
+    test('should turn the y\'s into length-x-y', () => {
+      expect(result).toEqual('as3xf5xy')
+    })
+  })
 })
