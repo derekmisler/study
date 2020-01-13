@@ -1,4 +1,4 @@
-import { multiplyLetters, divideLetters } from '~multiplyLetters'
+import { multiplyLetters, divideLetters, divideLettersAgain } from '~multiplyLetters'
 
 describe('multiplyLetters', () => {
   let result
@@ -23,7 +23,7 @@ describe('multiplyLetters', () => {
     })
   })
 })
-describe('multiplyLetters', () => {
+describe('divideLetters', () => {
   let result
   let string
   let letter
