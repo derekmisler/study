@@ -1,33 +1,42 @@
-import { calculate } from '~calculate'
+import { multiplyLetters, divideLetters } from '~multiplyLetters'
 
-describe('calculate', () => {
+describe('multiplyLetters', () => {
   let result
-  let obj
+  let string
   beforeEach(() => {
-    result = calculate(obj)
+    result = multiplyLetters(string)
   })
-  describe('addition', () => {
+  describe('8xk', () => {
     beforeAll(() => {
-      obj = { '+': [1, 2, 3] }
+      string = 'p14a8xkpq'
     })
-    test('should return 6', () => {
-      expect(result).toEqual(6)
-    })
-  })
-  describe('nested', () => {
-    beforeAll(() => {
-      obj = { '+': [1, 2, { '-': [1, 2] }] }
-    })
-    test('should return 2', () => {
-      expect(result).toEqual(2)
+    test('should add 8 "k"s', () => {
+      expect(result).toEqual('p14akkkkkkkkpq')
     })
   })
-  describe('deeply nested', () => {
+  describe('3xf, 4xy', () => {
     beforeAll(() => {
-      obj = { '+': [1, 2, { '-': [1, { '+': [5, 5] }] }] }
+      string = 'as3xf4xy'
     })
-    test('should return -6', () => {
-      expect(result).toEqual(-6)
+    test('should add 8 "k"s', () => {
+      expect(result).toEqual('asfffyyyy')
+    })
+  })
+})
+describe('multiplyLetters', () => {
+  let result
+  let string
+  let letter
+  beforeEach(() => {
+    result = divideLetters(string, letter)
+  })
+  describe('asfffyyyyy', () => {
+    beforeAll(() => {
+      string = 'asfffyyyyy'
+      letter = 'y'
+    })
+    test('should turn the y\'s into length-x-y', () => {
+      expect(result).toEqual('asfff5xy')
     })
   })
 })
