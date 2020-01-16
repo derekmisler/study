@@ -1,27 +1,25 @@
 // Return an array of all the combinations of the letters in the given array
 
-const swap = (chars, i, j) => {
-  const tmp = chars[i]
-  chars[i] = chars[j]
-  chars[j] = tmp
+const swap = (arr, i, j) => {
+  const temp = arr[i]
+  arr[i] = arr[j]
+  arr[j] = temp
 }
 
-export const combinations = chars => {
-  const counter = [...chars].fill(0)
-  const anagrams = []
-  const length = chars.length
-  let i = 0
+export const combinations = arr => {
+  const counter = [...arr].fill(0)
+  const anagrams = [arr.join('')] // start with the first one
 
-  anagrams.push(chars.join(''));
-  while (i < length) {
-    if (counter[i] < i) {
-      swap(chars, i % 2 === 1 ? counter[i] : 0, i)
-      counter[i]++
-      i = 0
-      anagrams.push(chars.join(''))
+  let idx = 0
+  while (idx < arr.length) {
+    if (counter[idx] < idx) {
+      swap(arr, idx % 2 === 1 ? counter[idx] : 0, idx)
+      counter[idx]++
+      idx = 0
+      anagrams.push(arr.join(''))
     } else {
-      counter[i] = 0
-      i++
+      counter[idx] = 0
+      idx++
     }
   }
 
