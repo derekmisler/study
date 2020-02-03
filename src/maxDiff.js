@@ -5,8 +5,12 @@
 
 export const maxDiff = arr => {
   if (arr.length < 2) return -1
-  for (let i = 1; i <= arr.length - 1; i++) {
-    if (arr[i] <= arr[i - 1]) return -1
-  }
-  return arr[arr.length - 1] - arr[0]
+  const copiedArray = [...arr]
+  arr.sort((a, b) => a - b)
+  const [first] = arr
+  const last = arr[arr.length - 1]
+  const firstIndex = copiedArray.findIndex(val => val === first)
+  const lastIndex = copiedArray.findIndex(val => val === last)
+  if (firstIndex > lastIndex) return -1
+  return last - first
 }

@@ -22,6 +22,22 @@ describe('maxDiff', () => {
       expect(result).toEqual(9)
     })
   })
+  describe('8 - 1', () => {
+    beforeAll(() => {
+      array = [1, 8, 2, 7]
+    })
+    test('should return 7', () => {
+      expect(result).toEqual(7)
+    })
+  })
+  describe('10 - 7', () => {
+    beforeAll(() => {
+      array = [9, 7, 8, 10, 11]
+    })
+    test('should return 3', () => {
+      expect(result).toEqual(4)
+    })
+  })
   describe('0', () => {
     beforeAll(() => {
       array = [0]
@@ -32,7 +48,7 @@ describe('maxDiff', () => {
   })
   describe('out of order', () => {
     beforeAll(() => {
-      array = [10, 9, 3, 21]
+      array = [21, 9, 3, 10]
     })
     test('should return -1', () => {
       expect(result).toEqual(-1)
