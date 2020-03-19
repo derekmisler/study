@@ -1,5 +1,5 @@
 {
-  "name": "study",
+  "name": "@derekmisler/study",
   "version": "1.0.0",
   "description": "A place to study new things",
   "main": "src/index.js",
